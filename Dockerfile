@@ -1,7 +1,11 @@
 FROM ubuntu:bionic
-RUN apt-get update && apt-get install -y --no-install-recommends \ 
+RUN apt-get update 
+RUN apt-get install -y --no-install-recommends \ 
 	build-essential \
 	cmake \
-	gmock-devel \
-	gtest-devel \
-	lcov
+	libgtest-dev
+	
+# Build GTest library
+RUN cd /usr/src/googletest && \
+    cmake . && \
+    cmake --build . --target install
