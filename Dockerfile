@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get install -y --no-install-recommends \ 
 	build-essential \
 	cmake \
-	git \
+	wget \
 	libgtest-dev \
 	mosquitto \
 	mosquitto-clients \
