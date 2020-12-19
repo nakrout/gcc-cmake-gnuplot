@@ -17,5 +17,3 @@ RUN apt-get install mosquitto -y
 RUN apt-get install mosquitto-clients -y
 # Install OpenSSL: Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols
 RUN apt-get install libssl-dev -y
-
-RUN git clone https://github.com/eclipse/paho.mqtt.c.git && cd paho.mqtt.c && make && make install && cd .. && rm -rf paho.mqtt.c
