@@ -8,7 +8,8 @@ RUN apt-get install -y --no-install-recommends \
 	libgtest-dev \
 	mosquitto \
 	mosquitto-clients \
-	libssl-dev
+	libssl-dev \
+	python-pytest
 	
 # Build GTest library
 RUN cd /usr/src/googletest && \
