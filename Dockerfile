@@ -9,9 +9,13 @@ RUN apt-get install -y --no-install-recommends \
 	mosquitto \
 	mosquitto-clients \
 	libssl-dev \
-	python-pytest
-	
-# Build GTest library
+	python3-pip \
+	python3-pytest
+
+# Install Python3 packages for Integration Tests
+RUN pip3 install pytest pytest-play play-mqtt paho-mqtt
+
+# Build GTest library for Unit Tests 
 RUN cd /usr/src/googletest && \
     cmake . && \
     cmake --build . --target install
