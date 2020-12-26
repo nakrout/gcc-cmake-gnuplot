@@ -14,7 +14,7 @@ RUN apt-get install -y --no-install-recommends \
 	python3-pytest
 
 # Install Python3 packages for Integration Tests
-RUN pip3 install pytest-play==2.0.2
+RUN export LC_ALL=en_US.UTF-8 && export LANG=en_US.UTF-8 && export LANGUAGE=en_US.UTF-8 && pip3 install pytest-play==2.0.2
 RUN pip3 install play-mqtt paho-mqtt
 
 # Build GTest library for Unit Tests 
