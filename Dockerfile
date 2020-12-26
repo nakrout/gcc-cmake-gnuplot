@@ -13,7 +13,8 @@ RUN apt-get install -y --no-install-recommends \
 	python3-pytest
 
 # Install Python3 packages for Integration Tests
-RUN pip3 install pytest pytest-play play-mqtt paho-mqtt
+RUN pip3 pytest-play==2.0.2
+RUN pip3 install pytest play-mqtt paho-mqtt
 
 # Build GTest library for Unit Tests 
 RUN cd /usr/src/googletest && \
