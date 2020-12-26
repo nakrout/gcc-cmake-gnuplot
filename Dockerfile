@@ -9,6 +9,7 @@ RUN apt-get install -y --no-install-recommends \
 	mosquitto \
 	mosquitto-clients \
 	libssl-dev \
+	python3-setuptools \
 	python3-pip \
 	python3-pytest
 
