@@ -27,3 +27,11 @@ RUN cd /usr/src/googletest && \
 RUN wget --no-check-certificate https://github.com/eclipse/paho.mqtt.c/archive/master.zip && \
 	unzip master.zip && rm -r master.zip && \
 	cd paho.mqtt.c-master && make && make install && cd .. && rm -rf paho.mqtt.c-master
+
+# Install Paho
+RUN wget --no-check-certificate https://github.com/mongodb/mongo-c-driver/archive/1.17.3.zip && \
+	unzip mongo-c-driver-1.17.3.zip && rm -r mongo-c-driver-1.17.3.zip && \
+	cd mongo-c-driver-1.17.3 && python build/calc_release_version.py > VERSION_CURRENT && \
+	mkdir cmake-build && cd cmake-build && cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF .. && \
+	cmake --build . && sudo cmake --build . --target install && \
+	cd ../.. && rm -rf mongo-c-driver-1.17.3
