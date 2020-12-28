@@ -30,7 +30,7 @@ RUN wget --no-check-certificate https://github.com/eclipse/paho.mqtt.c/archive/m
 
 # Install Paho
 RUN wget --no-check-certificate https://github.com/mongodb/mongo-c-driver/archive/1.17.3.zip && \
-	unzip mongo-c-driver-1.17.3.zip && rm -r mongo-c-driver-1.17.3.zip && \
+	unzip 1.17.3.zip && rm -r 1.17.3.zip && \
 	cd mongo-c-driver-1.17.3 && python build/calc_release_version.py > VERSION_CURRENT && \
 	mkdir cmake-build && cd cmake-build && cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF .. && \
 	cmake --build . && sudo cmake --build . --target install && \
