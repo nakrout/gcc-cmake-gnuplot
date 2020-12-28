@@ -29,9 +29,9 @@ RUN wget --no-check-certificate https://github.com/eclipse/paho.mqtt.c/archive/m
 	cd paho.mqtt.c-master && make && make install && cd .. && rm -rf paho.mqtt.c-master
 
 # Install Paho
-RUN wget --no-check-certificate https://github.com/mongodb/mongo-c-driver/archive/1.17.3.zip && \
-	unzip 1.17.3.zip && rm -r 1.17.3.zip && \
-	cd mongo-c-driver-1.17.3 && python build/calc_release_version.py > VERSION_CURRENT && \
+RUN wget --no-check-certificate https://github.com/mongodb/mongo-c-driver/releases/download/1.17.1/mongo-c-driver-1.17.1.tar.gz && \
+	tar xzf mongo-c-driver-1.17.1.tar.gz && rm -rf mongo-c-driver-1.17.1.tar.gz && \
+	cd mongo-c-driver-1.17.3 && \
 	mkdir cmake-build && cd cmake-build && cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF .. && \
 	cmake --build . && sudo cmake --build . --target install && \
 	cd ../.. && rm -rf mongo-c-driver-1.17.3
