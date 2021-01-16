@@ -4,6 +4,7 @@ RUN apt-get install -y --no-install-recommends \
 	build-essential \
 	cmake \
 	wget \
+	openssh-client \
 	unzip \
 	libgtest-dev \
 	mosquitto \
