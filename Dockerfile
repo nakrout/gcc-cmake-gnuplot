@@ -25,7 +25,7 @@ RUN cd /usr/src/googletest && \
     cmake --build . --target install
     
 # Install Paho
-RUN wget --no-check-certificate https://github.com/eclipse/paho.mqtt.c/archive/master.zip && \
+RUN wget --no-check-certificate https://github.com/eclipse/paho.mqtt.c/archive/refs/tags/v1.3.8.zip && \
 	unzip master.zip && rm -r master.zip && \
 	cd paho.mqtt.c-master && make && make install && cd .. && rm -rf paho.mqtt.c-master
 
