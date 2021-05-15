@@ -26,8 +26,8 @@ RUN cd /usr/src/googletest && \
     
 # Install Paho
 RUN wget --no-check-certificate https://github.com/eclipse/paho.mqtt.c/archive/refs/tags/v1.3.8.zip && \
-	unzip master.zip && rm -r master.zip && \
-	cd paho.mqtt.c-master && make && make install && cd .. && rm -rf paho.mqtt.c-master
+	unzip v1.3.8.zip && rm -r v1.3.8.zip && \
+	cd paho.mqtt.c-1.3.8 && make && make install && cd .. && rm -rf paho.mqtt.c-1.3.8
 
 # Install mongo-c-driver
 RUN wget --no-check-certificate https://github.com/mongodb/mongo-c-driver/releases/download/1.17.1/mongo-c-driver-1.17.1.tar.gz && \
